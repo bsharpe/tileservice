@@ -15,7 +15,7 @@ configure :production do
   set :logging, Logger::ERROR
 end
 
-DEFAULT_COLOR = 'fffefe'
+DEFAULT_COLOR = 'DDDCBF'
 DEFAULT_SIZE  = 100
 
 def tileService
@@ -23,7 +23,7 @@ def tileService
 end
 
 def color(color = nil)
-  color ||= DEFAULT_COLOR
+  color = DEFAULT_COLOR if color.nil? || color.size == 0
   "##{color}"
 end
   
@@ -34,25 +34,25 @@ get '/:base' do
   content_type :svg
   
   tileService.create(params[:base],
-    color, 
+    color(), 
     size: DEFAULT_SIZE, 
     rotation: params[:r] || 0,
     hflip: params[:flip],
     vflip: params[:flop]
     ).to_s
 end
-get '/:base/:color' do
+get '/:base/:size' do
   content_type :svg  
 
   tileService.create(params[:base],
-    color(params[:color]), 
-    size: DEFAULT_SIZE, 
+    color(), 
+    size: params[:size].to_i, 
     rotation: params[:r] || 0,
     hflip: params[:flip],
     vflip: params[:flop]
     ).to_s
 end
-get '/:base/:color/:size' do
+get '/:base/:size/:color' do
   content_type :svg
 
   tileService.create(params[:base],

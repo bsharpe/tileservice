@@ -3,9 +3,11 @@ require 'tiles'
 class TileService
   
   DEFAULT_SCALE = 100/85.0
+  DEFUALT_COLOR = '#DDDCBF'
   
   def create(base, color, size: 100, **options)
     
+    color = DEAFULT_COLOR if color.blank? || color.size == 1
     badge_offset = 23
     badge_start_x = 15
     badge_start_y = 15
