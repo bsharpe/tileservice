@@ -19,7 +19,6 @@ DEFAULT_COLOR = 'fffefe'
 
 def color(color = nil)
   color ||= DEFAULT_COLOR
-  puts "##{color}"
   "##{color}"
 end
   
@@ -27,17 +26,35 @@ end
 get '/:base' do
   content_type :svg
   ts = TileService.new
-  ts.create(params[:base],color).to_s
+  ts.create(params[:base],
+    color(params[:color]), 
+    size: params[:size].to_i, 
+    rotation: params[:r] || 0,
+    hflip: params[:flip],
+    vflip: params[:flop]
+    ).to_s
 end
 get '/:base/:color' do
   content_type :svg  
   ts = TileService.new
-  ts.create(params[:base],color(params[:color])).to_s
+  ts.create(params[:base],
+    color(params[:color]), 
+    size: params[:size].to_i, 
+    rotation: params[:r] || 0,
+    hflip: params[:flip],
+    vflip: params[:flop]
+    ).to_s
 end
 get '/:base/:color/:size' do
   content_type :svg
   ts = TileService.new
-  ts.create(params[:base],color(params[:color]), size: params[:size].to_i).to_s
+  ts.create(params[:base],
+    color(params[:color]), 
+    size: params[:size].to_i, 
+    rotation: params[:r] || 0,
+    hflip: params[:flip],
+    vflip: params[:flop]
+    ).to_s
 end
 
 get '/' do
