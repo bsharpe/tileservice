@@ -22,6 +22,8 @@ def color(color = nil)
   "##{color}"
 end
   
+get '/favicon.ico' do
+end
 
 get '/:base' do
   content_type :svg
