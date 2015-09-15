@@ -54,7 +54,7 @@ class TileService
 
           rectangle( 0, 0, 100, 100, rx: 12, ry: 12, fill: 'transparent', stroke: 'black', stroke_width: 4, opacity: 0.2)
         end
-      end.translate(hoffset,voffset).rotate(options[:rotation], 50, 50).scale(hflip * size/100.0, vflip * size/100.0)
+      end.rotate(options[:rotation], size/2.0, size/2.0).translate(hoffset,voffset).scale(hflip * size/100.0, vflip * size/100.0)
     end
   end
 end
