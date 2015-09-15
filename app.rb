@@ -1,6 +1,10 @@
 $:.unshift(File.expand_path('../lib', __FILE__))
 
+require 'active_support/all'
 require 'sinatra'
+require 'sinatra/base'
+require 'sinatra/reloader'
+require 'sinatra/config_file'
 require 'tile_service'
 
 set :public_folder, File.dirname(__FILE__) + '/public'

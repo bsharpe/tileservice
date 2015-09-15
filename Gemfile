@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 ruby '2.2.2'
 
 gem 'rake'
-gem 'sinatra'
+gem 'activesupport', '~>4.2'
+gem 'sinatra', github: 'sinatra/sinatra'
+gem 'sinatra-contrib'
 gem 'puma'
 gem 'foreman'
 
