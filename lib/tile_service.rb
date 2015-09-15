@@ -16,10 +16,10 @@ class TileService
     hoffset = hflip == -1 ? size : 0
     voffset = vflip == -1 ? size : 0
     
-    puts "R:#{options[:rotation]} V:#{vflip} H:#{hflip} C:#{color} Z:#{size}"
     
     tile_data = $tiles[base.to_sym]
     
+    puts "#{base} R:#{options[:rotation]} V:#{vflip} H:#{hflip} C:#{color} Z:#{size} #{tile_data ? '...' : '!!!'}"
     Rasem::SVGImage.new(width: size, height: size, lean: options[:lean]) do
       defs do
         mask(id: 'Mask') do
