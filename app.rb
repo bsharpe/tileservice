@@ -16,6 +16,11 @@ configure :production do
 end
 
 DEFAULT_COLOR = 'fffefe'
+DEFAULT_SIZE  = 100
+
+def tileService
+  @_tileService ||= TileService.new
+end
 
 def color(color = nil)
   color ||= DEFAULT_COLOR
@@ -27,10 +32,10 @@ end
 
 get '/:base' do
   content_type :svg
-  ts = TileService.new
-  ts.create(params[:base],
-    color(params[:color]), 
-    size: params[:size].to_i, 
+  
+  tileService.create(params[:base],
+    color, 
+    size: DEFAULT_SIZE, 
     rotation: params[:r] || 0,
     hflip: params[:flip],
     vflip: params[:flop]
@@ -38,10 +43,10 @@ get '/:base' do
 end
 get '/:base/:color' do
   content_type :svg  
-  ts = TileService.new
-  ts.create(params[:base],
+
+  tileService.create(params[:base],
     color(params[:color]), 
-    size: params[:size].to_i, 
+    size: DEFAULT_SIZE, 
     rotation: params[:r] || 0,
     hflip: params[:flip],
     vflip: params[:flop]
@@ -49,8 +54,8 @@ get '/:base/:color' do
 end
 get '/:base/:color/:size' do
   content_type :svg
-  ts = TileService.new
-  ts.create(params[:base],
+
+  tileService.create(params[:base],
     color(params[:color]), 
     size: params[:size].to_i, 
     rotation: params[:r] || 0,

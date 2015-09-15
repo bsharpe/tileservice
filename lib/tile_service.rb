@@ -9,16 +9,14 @@ class TileService
     badge_offset = 23
     badge_start_x = 15
     badge_start_y = 15
-    options[:badges] ||= {}
-    options[:rotation] ||= 0
+    options[:rotation] = options[:rotation].to_i * 90
     options[:lean] ||= false
     vflip = options[:vflip] ? -1 : 1
     hflip = options[:hflip] ? -1 : 1
     hoffset = hflip == -1 ? size : 0
     voffset = vflip == -1 ? size : 0
     
-    badge_keys = options[:badges].keys
-    any_friendly = options[:badges].values.any?
+    puts "R:#{options[:rotation]} V:#{vflip} H:#{hflip} C:#{color} Z:#{size}"
     
     tile_data = $tiles[base.to_sym]
     
@@ -56,7 +54,7 @@ class TileService
 
           rectangle( 0, 0, 100, 100, rx: 12, ry: 12, fill: 'transparent', stroke: 'black', stroke_width: 4, opacity: 0.2)
         end
-      end.translate(hoffset,voffset).scale(hflip * size/100.0, vflip * size/100.0).rotate(options[:rotation])
+      end.translate(hoffset,voffset).scale(hflip * size/100.0, vflip * size/100.0).rotate(options[:rotation], size/2, size/2)
     end
   end
 end
