@@ -18,6 +18,8 @@ end
 DEFAULT_COLOR = 'DDDCBF'
 DEFAULT_SIZE  = 100
 
+use Rack::Cache
+
 def tileService
   @_tileService ||= TileService.new
 end
@@ -30,38 +32,40 @@ end
 get '/favicon.ico' do
 end
 
-get '/:base' do
-  content_type :svg
-  
+
+def generate_tile(params)
   tileService.create(params[:base],
-    color(), 
-    size: DEFAULT_SIZE, 
+    color(params[:color]), 
+    size: (params[:size] || DEFAULT_SIZE).to_i, 
     rotation: params[:r] || 0,
     hflip: params[:flip],
     vflip: params[:flop]
-    ).to_s
+    )
+end
+
+get '/:base' do
+  content_type :svg
+  
+  cache_control :public, max_age: 10
+  tile = generate_tile(params).to_s
+  etag Digest::MD5.hexdigest(tile)
+  tile
 end
 get '/:base/:size' do
   content_type :svg  
 
-  tileService.create(params[:base],
-    color(), 
-    size: params[:size].to_i, 
-    rotation: params[:r] || 0,
-    hflip: params[:flip],
-    vflip: params[:flop]
-    ).to_s
+  cache_control :public, max_age: 10
+  tile = generate_tile(params).to_s
+  etag Digest::MD5.hexdigest(tile)
+  tile
 end
 get '/:base/:size/:color' do
   content_type :svg
 
-  tileService.create(params[:base],
-    color(params[:color]), 
-    size: params[:size].to_i, 
-    rotation: params[:r] || 0,
-    hflip: params[:flip],
-    vflip: params[:flop]
-    ).to_s
+  cache_control :public, max_age: 10
+  tile = generate_tile(params).to_s
+  etag Digest::MD5.hexdigest(tile)
+  tile
 end
 
 get '/' do

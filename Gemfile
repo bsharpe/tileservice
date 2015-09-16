@@ -3,6 +3,7 @@ ruby '2.2.2'
 
 gem 'rake'
 gem 'activesupport', '~>4.2'
+gem 'rack-cache'
 gem 'sinatra', github: 'sinatra/sinatra'
 gem 'sinatra-contrib'
 gem 'puma'
