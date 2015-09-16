@@ -46,9 +46,9 @@ end
 get '/:base' do
   content_type :svg
   
-  cache_control :public, max_age: 10
+ # cache_control :public, max_age: 10
   tile = generate_tile(params).to_s
-  etag Digest::MD5.hexdigest(tile)
+#  etag Digest::MD5.hexdigest(tile)
   tile
 end
 get '/:base/:size' do
@@ -62,7 +62,7 @@ end
 get '/:base/:size/:color' do
   content_type :svg
 
-  cache_control :public, max_age: 10
+  cache_control :public, max_age: 5 * 60
   tile = generate_tile(params).to_s
   etag Digest::MD5.hexdigest(tile)
   tile

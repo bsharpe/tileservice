@@ -28,9 +28,11 @@ class TileService
           rectangle( 0, 0, 100, 100, rx: 12, ry: 12, fill: 'white')
         end
         
-        if tile_data
-          group(id: base) do
+        group(id: base) do
+          if tile_data
             instance_eval tile_data
+          else
+            text(10, 40, fill: "red") { raw "#{base}" }
           end
         end
         
@@ -52,7 +54,7 @@ class TileService
             use('special', fill: special_color, stroke: special_color, opacity: 0.3).scale(DEFAULT_SCALE) 
           end
           
-          use(base).scale(DEFAULT_SCALE) if tile_data
+          use(base).scale(DEFAULT_SCALE) 
 
           rectangle( 0, 0, 100, 100, rx: 12, ry: 12, fill: 'transparent', stroke: 'black', stroke_width: 4, opacity: 0.2)
         end
