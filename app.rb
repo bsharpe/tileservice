@@ -60,6 +60,7 @@ before do
 end
 
 get '/t/:base' do
+  params[:size] = 200
   generate_tile(params).to_s
 end
 get '/t/:base/:size' do
