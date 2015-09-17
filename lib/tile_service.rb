@@ -3,7 +3,7 @@ require 'tiles'
 class TileService
   
   DEFAULT_SCALE = 100/85.0
-  DEFUALT_COLOR = '#DDDCBF'
+  DEFAULT_COLOR = '#DDDCBF'
   
   def create(base, color, size: 100, **options)
     
@@ -21,18 +21,16 @@ class TileService
     
     tile_data = $tiles[base.to_sym]
     
-    puts "#{base} R:#{options[:rotation]} V:#{vflip} H:#{hflip} C:#{color} Z:#{size} #{tile_data ? '...' : '!!!'}"
+    #puts "#{base} R:#{options[:rotation]} V:#{vflip} H:#{hflip} C:#{color} Z:#{size} #{tile_data ? '...' : '!!!'}"
     Rasem::SVGImage.new(width: size, height: size, lean: options[:lean]) do
       defs do
         mask(id: 'Mask') do
           rectangle( 0, 0, 100, 100, rx: 12, ry: 12, fill: 'white')
         end
         
-        group(id: base) do
-          if tile_data
+        if tile_data
+          group(id: base) do
             instance_eval tile_data
-          else
-            text(10, 40, fill: "red") { raw "#{base}" }
           end
         end
         
@@ -54,7 +52,17 @@ class TileService
             use('special', fill: special_color, stroke: special_color, opacity: 0.3).scale(DEFAULT_SCALE) 
           end
           
-          use(base).scale(DEFAULT_SCALE) 
+          if tile_data
+            use(base).scale(DEFAULT_SCALE) 
+          elsif base.downcase != 'blank'
+            text(50, 33, fill: "black", 
+              'text-anchor' => 'middle', 
+              'alignment-baseline' => 'central',
+              'font-family' => 'Century Gothic, Verdana, Helvetica, Arial, sans-serif',
+              'letter-spacing' => -1.5) { 
+                lines(base.gsub('_',"\n\r"), 16)
+             }
+          end
 
           rectangle( 0, 0, 100, 100, rx: 12, ry: 12, fill: 'transparent', stroke: 'black', stroke_width: 4, opacity: 0.2)
         end

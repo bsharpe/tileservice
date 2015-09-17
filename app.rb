@@ -6,6 +6,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require 'sinatra/config_file'
 require 'tile_service'
+require 'badge_service'
 
 set :public_folder, File.dirname(__FILE__) + '/public'
 set :root, File.dirname(__FILE__)
@@ -17,11 +18,16 @@ end
 
 DEFAULT_COLOR = 'DDDCBF'
 DEFAULT_SIZE  = 100
+DEFAULT_BADGE_SIZE = 25
+MAX_AGE = 15 * 60
 
 use Rack::Cache
 
 def tileService
   @_tileService ||= TileService.new
+end
+def badgeService
+  @_badgeService ||= BadgeService.new
 end
 
 def color(color = nil)
@@ -43,27 +49,39 @@ def generate_tile(params)
     )
 end
 
-get '/:base' do
-  content_type :svg
-  
- # cache_control :public, max_age: 10
-  tile = generate_tile(params).to_s
-#  etag Digest::MD5.hexdigest(tile)
-  tile
+def generate_badge(params)
+  badgeService.create(params[:base], 
+    size: (params[:size] || DEFAULT_BADGE_SIZE).to_i,
+    friend: params[:f])
 end
-get '/:base/:size' do
-  content_type :svg  
 
-  cache_control :public, max_age: 10
+before do
+  content_type :svg
+end
+
+get '/t/:base' do
+  generate_tile(params).to_s
+end
+get '/t/:base/:size' do
+  cache_control :public, max_age: MAX_AGE
   tile = generate_tile(params).to_s
   etag Digest::MD5.hexdigest(tile)
   tile
 end
-get '/:base/:size/:color' do
-  content_type :svg
-
-  cache_control :public, max_age: 5 * 60
+get '/t/:base/:size/:color' do
+  cache_control :public, max_age: MAX_AGE
   tile = generate_tile(params).to_s
+  etag Digest::MD5.hexdigest(tile)
+  tile
+end
+
+get '/b/:base' do
+  params[:size] = 200
+  generate_badge(params).to_s
+end
+get '/b/:base/:size' do
+  cache_control :public, max_age: MAX_AGE
+  tile = generate_badge(params).to_s
   etag Digest::MD5.hexdigest(tile)
   tile
 end

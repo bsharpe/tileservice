@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="85" height="85">
+    <desc iVinci="yes" version="4.6" gridStep="20" showGrid="no" snapToGrid="no" codePlatform="0"/>
+    <g id="Layer1" name="Layer 1" opacity="1">
+        <g id="Shape1">
+            <desc shapeID="1" type="0" basicInfo-basicType="0" basicInfo-roundedRectRadius="12" basicInfo-polygonSides="6" basicInfo-starPoints="5" bounding="rect(-31.25,-30.25,62.5,60.5)" text="" font-familyName="Helvetica" font-pixelSize="20" font-bold="0" font-underline="0" font-alignment="1" strokeStyle="0" markerStart="0" markerEnd="0" shadowEnabled="0" shadowOffsetX="0" shadowOffsetY="2" shadowBlur="4" shadowOpacity="160" blurEnabled="0" blurRadius="4" transform="matrix(1,0,0,1,42.5,42.5)" pers-center="0,0" pers-size="0,0" pers-start="0,0" pers-end="0,0" locked="0" mesh="" flag=""/>
+            <path id="shapePath1" d="M11.25,23.25 C11.25,20.75 13.25,18.75 16.25,18.75 C16.25,18.75 35.75,18.75 35.75,18.75 L35.75,17.25 C35.75,14.75 37.75,12.25 40.75,12.25 L44.25,12.25 C46.75,12.25 49.25,14.75 49.25,17.25 L49.25,18.75 C58.25,18.75 68.75,18.75 68.75,18.75 C71.75,18.75 73.75,20.75 73.75,23.25 L73.75,61.25 C73.75,63.75 71.75,65.75 68.75,65.75 C68.75,65.75 58.25,65.75 49.25,65.75 L49.25,67.75 C49.25,70.25 46.75,72.75 44.25,72.75 L40.75,72.75 C37.75,72.75 35.75,70.25 35.75,67.75 L35.75,65.75 C35.75,65.75 16.25,65.75 16.25,65.75 C13.25,65.75 11.25,63.75 11.25,61.25 L11.25,23.25 Z" style="stroke:url(#linearGradientStroke1);stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:2;stroke-linecap:round;fill-rule:evenodd;fill:#969696;fill-opacity:1;"/><defs><linearGradient id="linearGradientStroke1" gradientUnits="userSpaceOnUse" x1="16.6934" y1="42.5" x2="68.3066" y2="42.5"><stop offset="0" stop-color="#323232" stop-opacity="0"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient></defs>
+        </g>
+    </g>
+</svg>
