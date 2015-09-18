@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.2'
+ruby '2.2.3'
 
 gem 'rake'
 gem 'activesupport', '~>4.2'
@@ -10,3 +10,5 @@ gem 'puma'
 gem 'foreman'
 
 gem 'rasem', github:'bsharpe/rasem'
+
+gem 'thor'

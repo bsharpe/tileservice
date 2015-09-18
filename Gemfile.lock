@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/bsharpe/rasem.git
-  revision: 9a2a38db0f2f663461ca965466e68c6298906d8a
+  revision: a745256c39082ceb3aa96295036374a8cf24570c
   specs:
     rasem (0.7.0)
 
@@ -29,7 +29,7 @@ GEM
     json (1.8.3)
     minitest (5.8.0)
     multi_json (1.11.2)
-    puma (2.12.3)
+    puma (2.14.0)
     rack (1.5.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -63,6 +63,7 @@ DEPENDENCIES
   rasem!
   sinatra!
   sinatra-contrib
+  thor
 
 BUNDLED WITH
    1.10.6

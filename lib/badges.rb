@@ -5,11 +5,8 @@ $badges = {
         raw %Q[
           <path fill="#fff" opacity="1.00" d=" M 5.94 7.13 C 8.64 7.22 11.34 7.19 14.05 7.13 C 14.16 7.83 14.37 9.24 14.48 9.94 C 13.03 11.58 11.53 13.19 9.99 14.75 C 8.46 13.19 6.98 11.59 5.54 9.95 C 5.64 9.24 5.84 7.83 5.94 7.13 Z" />
         ]
-      end.scale(1.1)
+      end
     end
-    circle(11,11,10, fill: "#2b73b1", stroke: "#2b73b1", opacity: 1.0)
-    use('badge')
-    circle(11,11,10, fill: "transparent", stroke: '#fff', stroke_width: 2,opacity: 0.35 )
   },
   vampire: %Q{ 
     defs do
@@ -17,11 +14,8 @@ $badges = {
         raw %Q[
         <path fill="#ffffff" opacity="1.00" d=" M 6.56 12.95 C 6.31 9.69 8.84 7.10 10.00 4.22 C 11.15 7.10 13.69 9.68 13.43 12.95 C 12.68 16.39 7.34 16.39 6.56 12.95 Z" />
         ]
-      end
+      end.scale(0.7,0.8).translate(4,2)
     end
-    circle(11,11,10, fill: "#c80103", stroke: "#c80103", opacity: 1.0)
-    use('badge').scale(1.1)
-    circle(11,11,10, fill: "transparent", stroke: '#fff',stroke_width: 2, opacity: 0.35 )
   },
   zombie: %Q{ 
     defs do
@@ -32,9 +26,6 @@ $badges = {
         ]
       end
     end
-    circle(11,11,10, fill: "#7bac38", stroke: "#7bac38", opacity: 1.0)
-    use('badge').scale(1.1)
-    circle(11,11,10, fill: "transparent", stroke: '#fff', stroke_width: 2,opacity: 0.35 )
   },
   werewolf: %Q{ 
     defs do
@@ -46,9 +37,6 @@ $badges = {
          ]
       end
     end
-    circle(11,11,10, fill: "#8c6239", stroke: "#8c6239", opacity: 1.0)
-    use('badge').scale(1.1)
-    circle(11,11,10, fill: "transparent", stroke: '#fff',stroke_width: 2, opacity: 0.35 )    
   },
   traitor: %Q{
     defs do
@@ -58,8 +46,5 @@ $badges = {
         ]
       end
     end
-    circle(11,11,10, fill: "#333", stroke: "#333", opacity: 1.0)
-    use('badge').scale(1.1)
-    circle(11,11,10, fill: "transparent", stroke: '#fff',stroke_width: 2, opacity: 0.35 )    
   },
 }

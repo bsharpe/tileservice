@@ -34,10 +34,6 @@ def color(color = nil)
   color = DEFAULT_COLOR if color.nil? || color.size == 0
   "##{color}"
 end
-  
-get '/favicon.ico' do
-end
-
 
 def generate_tile(params)
   tileService.create(params[:base],
@@ -59,15 +55,24 @@ before do
   content_type :svg
 end
 
-get '/t/:base' do
-  params[:size] = 200
-  generate_tile(params).to_s
+####
+# FAVICON
+#
+get '/favicon.ico' do
+  content_type 'image/svg+xml'
+  badgeService.create('traitor',size: 64,friend: true).to_s
 end
-get '/t/:base/:size' do
-  cache_control :public, max_age: MAX_AGE
-  tile = generate_tile(params).to_s
-  etag Digest::MD5.hexdigest(tile)
-  tile
+get '/favicon.svg' do
+  content_type 'image/svg+xml'
+  badgeService.create('traitor',size: 64,friend: true).to_s
+end
+
+####
+# TILES
+#
+get '/t/:base' do
+  params[:size] ||= 200
+  generate_tile(params).to_s
 end
 get '/t/:base/:size/:color' do
   cache_control :public, max_age: MAX_AGE
@@ -76,8 +81,11 @@ get '/t/:base/:size/:color' do
   tile
 end
 
+####
+# BADGES
+#
 get '/b/:base' do
-  params[:size] = 200
+  params[:size] ||= 200
   generate_badge(params).to_s
 end
 get '/b/:base/:size' do
@@ -87,6 +95,9 @@ get '/b/:base/:size' do
   tile
 end
 
+####
+# ROOT
+#
 get '/' do
   content_type :text
   'hello'

@@ -8,6 +8,7 @@ class TileService
   def create(base, color, size: 100, **options)
     
     color = DEAFULT_COLOR if color.blank? || color.size == 1
+    color = 'transparent' if color == '#transparent'
     badge_offset = 23
     badge_start_x = 15
     badge_start_y = 15
@@ -25,7 +26,7 @@ class TileService
     Rasem::SVGImage.new(width: size, height: size, lean: options[:lean]) do
       defs do
         mask(id: 'Mask') do
-          rectangle( 0, 0, 100, 100, rx: 12, ry: 12, fill: 'white')
+          rectangle( -1, -1, 102, 102,fill: 'white')
         end
         
         if tile_data
@@ -46,10 +47,10 @@ class TileService
       end
       group do
         group id: 'int', mask: 'url(#Mask)' do 
-          rectangle( 0, 0, 100, 100, rx: 12, ry: 12, fill: color)
+          rectangle( -1, -1, 102, 102,  fill: color)
           if options[:special]
             special_color = "##{options[:special]}"
-            use('special', fill: special_color, stroke: special_color, opacity: 0.3).scale(DEFAULT_SCALE) 
+            use('special', fill: special_color, opacity: 0.3).scale(DEFAULT_SCALE) 
           end
           
           if tile_data
@@ -64,7 +65,7 @@ class TileService
              }
           end
 
-          rectangle( 0, 0, 100, 100, rx: 12, ry: 12, fill: 'transparent', stroke: 'black', stroke_width: 4, opacity: 0.2)
+          rectangle( 0, 0, 100, 100, rx: 5, ry: 5, fill: 'transparent', stroke: 'black', stroke_width: 6, opacity: 0.2)
         end
       end.rotate(options[:rotation], size/2.0, size/2.0).translate(hoffset,voffset).scale(hflip * size/100.0, vflip * size/100.0)
     end
