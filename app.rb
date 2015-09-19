@@ -17,8 +17,8 @@ configure :production do
 end
 
 DEFAULT_COLOR = 'DDDCBF'
-DEFAULT_SIZE  = 100
-DEFAULT_BADGE_SIZE = 25
+DEFAULT_SIZE  = 200
+DEFAULT_BADGE_SIZE = 100
 MAX_AGE = 15 * 60
 
 use Rack::Cache
@@ -37,8 +37,8 @@ end
 
 def generate_tile(params)
   tileService.create(params[:base],
-    color(params[:color]), 
-    size: (params[:size] || DEFAULT_SIZE).to_i, 
+    color(params[:c]), 
+    size: (params[:s] || DEFAULT_SIZE).to_i, 
     rotation: params[:r] || 0,
     hflip: params[:flip],
     vflip: params[:flop]
@@ -71,7 +71,6 @@ end
 # TILES
 #
 get '/t/:base.svg' do
-  params[:size] ||= 200
   generate_tile(params).to_s
 end
 get '/t/c/:base.svg' do
@@ -85,7 +84,6 @@ end
 # BADGES
 #
 get '/b/:base.svg' do
-  params[:size] ||= 200
   generate_badge(params).to_s
 end
 get '/b/c/:base.svg' do
