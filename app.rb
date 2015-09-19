@@ -10,10 +10,13 @@ require 'badge_service'
 
 set :public_folder, File.dirname(__FILE__) + '/public'
 set :root, File.dirname(__FILE__)
-set :logging, true
 
 configure :production do
   set :logging, Logger::ERROR
+end
+
+configure :development do 
+  set :logging, Logger::DEBUG
 end
 
 DEFAULT_COLOR = 'DDDCBF'
@@ -23,11 +26,8 @@ MAX_AGE = 15 * 60
 
 use Rack::Cache
 
-def tileService
-  @_tileService ||= TileService.new
-end
-def badgeService
-  @_badgeService ||= BadgeService.new
+before do
+  content_type :svg
 end
 
 def color(color = nil)
@@ -36,7 +36,7 @@ def color(color = nil)
 end
 
 def generate_tile(params)
-  tileService.create(params[:base],
+  TileService.instance.create(params[:base],
     color(params[:c]), 
     size: (params[:s] || DEFAULT_SIZE).to_i, 
     rotation: params[:r] || 0,
@@ -46,13 +46,9 @@ def generate_tile(params)
 end
 
 def generate_badge(params)
-  badgeService.create(params[:base], 
+  BadgeService.instance.create(params[:base], 
     size: (params[:size] || DEFAULT_BADGE_SIZE).to_i,
     friend: params[:f])
-end
-
-before do
-  content_type :svg
 end
 
 ####
@@ -60,11 +56,11 @@ end
 #
 get '/favicon.ico' do
   content_type 'image/svg+xml'
-  badgeService.create('traitor',size: 64,friend: true).to_s
+  BadgeService.instance.create('traitor',size: 64,friend: true).to_s
 end
 get '/favicon.svg' do
   content_type 'image/svg+xml'
-  badgeService.create('traitor',size: 64,friend: true).to_s
+  BadgeService.instance.create('traitor',size: 64,friend: true).to_s
 end
 
 ####

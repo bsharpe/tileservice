@@ -1,6 +1,7 @@
 require 'badges'
 
 class BadgeService
+  include Singleton
   
   DEFAULT_SCALE = 100/24.0
   BADGE_COLORS = {
