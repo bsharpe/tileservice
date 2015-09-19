@@ -36,12 +36,22 @@ def color(color = nil)
 end
 
 def generate_tile(params)
+  if params[:r]
+    case params[:r].to_i
+    when 1..3:
+      params[:rotation] = params[:r].to_i * 90
+    when 4: 
+      params[:flip] = true
+    when 5:
+      params[:flop] = true
+    end
+  end
   TileService.instance.create(params[:base],
     color(params[:c]), 
     size: (params[:s] || DEFAULT_SIZE).to_i, 
     rotation: params[:r] || 0,
-    hflip: params[:h],
-    vflip: params[:v]
+    hflip: params[:flip],
+    vflip: params[:flop]
     )
 end
 

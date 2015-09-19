@@ -13,7 +13,7 @@ class TileService
     badge_offset = 23
     badge_start_x = 15
     badge_start_y = 15
-    options[:rotation] = options[:rotation].to_i * 90
+    options[:rotation] = options[:rotation].to_i
     options[:lean] ||= false
     vflip = options[:vflip] ? -1 : 1
     hflip = options[:hflip] ? -1 : 1
