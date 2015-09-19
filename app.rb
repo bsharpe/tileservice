@@ -70,11 +70,11 @@ end
 ####
 # TILES
 #
-get '/t/:base' do
+get '/t/:base.svg' do
   params[:size] ||= 200
   generate_tile(params).to_s
 end
-get '/t/:base/:size/:color' do
+get '/t/c/:base.svg' do
   cache_control :public, max_age: MAX_AGE
   tile = generate_tile(params).to_s
   etag Digest::MD5.hexdigest(tile)
@@ -84,11 +84,11 @@ end
 ####
 # BADGES
 #
-get '/b/:base' do
+get '/b/:base.svg' do
   params[:size] ||= 200
   generate_badge(params).to_s
 end
-get '/b/:base/:size' do
+get '/b/c/:base.svg' do
   cache_control :public, max_age: MAX_AGE
   tile = generate_badge(params).to_s
   etag Digest::MD5.hexdigest(tile)
@@ -100,5 +100,5 @@ end
 #
 get '/' do
   content_type :text
-  'hello'
+  'TileServer 0.2'
 end
