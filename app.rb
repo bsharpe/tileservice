@@ -40,14 +40,14 @@ def generate_tile(params)
     color(params[:c]), 
     size: (params[:s] || DEFAULT_SIZE).to_i, 
     rotation: params[:r] || 0,
-    hflip: params[:flip],
-    vflip: params[:flop]
+    hflip: params[:h],
+    vflip: params[:v]
     )
 end
 
 def generate_badge(params)
   BadgeService.instance.create(params[:base], 
-    size: (params[:size] || DEFAULT_BADGE_SIZE).to_i,
+    size: (params[:s] || DEFAULT_BADGE_SIZE).to_i,
     friend: params[:f])
 end
 

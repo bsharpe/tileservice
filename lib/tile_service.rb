@@ -2,7 +2,7 @@ require 'tiles'
 
 class TileService
   include Singleton
-  
+   
   DEFAULT_SCALE = 100/85.0
   DEFAULT_COLOR = '#DDDCBF'
   
