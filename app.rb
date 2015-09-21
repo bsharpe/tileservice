@@ -22,7 +22,7 @@ end
 DEFAULT_COLOR = 'DDDCBF'
 DEFAULT_SIZE  = 200
 DEFAULT_BADGE_SIZE = 100
-MAX_AGE = 15 * 60
+MAX_AGE = 60 * 60
 
 use Rack::Cache
 
@@ -38,11 +38,11 @@ end
 def generate_tile(params)
   if params[:r]
     case params[:r].to_i
-    when 1..3:
+    when 1..3
       params[:rotation] = params[:r].to_i * 90
-    when 4: 
+    when 4
       params[:flip] = true
-    when 5:
+    when 5
       params[:flop] = true
     end
   end

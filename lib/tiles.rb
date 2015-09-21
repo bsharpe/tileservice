@@ -12,6 +12,19 @@ $tiles = {
       rect 50,17,18,51, rx:5, ry:5
     end
   },
+  eq: %Q{
+    group(opacity: 0.35) do
+      rect 17,17,18,51, rx:5, ry:5
+      rect 50,17,18,51, rx:5, ry:5
+    end
+  },
+  ech: %Q{
+    group(opacity: 0.35) do
+      rect 17,17,18,51, rx:5, ry:5
+      rect 17,32,51,22, rx:5, ry:5
+      rect 50,17,18,51, rx:5, ry:5
+    end
+  },
   small: %Q{
     rect 21,28,43,25, rx:5, ry:5, opacity: 0.35
   },
@@ -36,6 +49,12 @@ $tiles = {
       rect 33,17,20,51, rx:5, ry:5
     end
   },
+  square_3: %Q{
+    group(opacity: 0.35) do
+      rect 17,17,51,51, rx:5, ry:5
+      circle 22,22,10
+    end
+  },
   hall: %Q{
     group(opacity: 0.35) do
       rect 17,23,51,31, rx:5, ry:5
@@ -45,8 +64,9 @@ $tiles = {
   house1: %Q{
     rect 17,17,51,51, rx:5, ry:5, opacity: 0.1
     group(opacity: 0.35) do
-      rect 21,30,43,16, rx:6, ry:6
-      rect 48,30,16,25, rx:6, ry:6
+      rect 25,35,35,20, rx:6, ry:6
+      rect 50,30,11,25, rx:6, ry:6
+      rect 25,30,11,25, rx:6, ry:6
     end
   },
   house2: %Q{
