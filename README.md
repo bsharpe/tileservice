@@ -50,6 +50,7 @@ Next is the name of the tile -- currently accepted names are:
 Then, add `.svg` to the end.
 
 `http://tiles.toothandclaw.co/t/c/hall.svg`
+
 ![](http://tiles.toothandclaw.co/t/c/hall.svg)
 
 Now we can manipulate the tile by adding params.  Choices are:
@@ -62,9 +63,9 @@ Now we can manipulate the tile by adding params.  Choices are:
   - 4 flips the tile horizontally
   - 5 flips the tile vertically
 
-`http://tiles.toothandclaw.co/t/c/hall.svg?s=100&c=27b`
+`http://tiles.toothandclaw.co/t/c/hall.svg?s=100&c=27b&r=1`
 
-![](http://tiles.toothandclaw.co/t/c/hall.svg?s=100&c=27b)
+![](http://tiles.toothandclaw.co/t/c/hall.svg?s=100&c=27b&r=1)
 
 
 
