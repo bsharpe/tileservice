@@ -50,7 +50,7 @@ Next is the name of the tile -- currently accepted names are:
 Then, add `.svg` to the end.
 
 `http://tiles.toothandclaw.co/t/c/hall.svg`
-!(http://tiles.toothandclaw.co/t/c/hall.svg)
+![](http://tiles.toothandclaw.co/t/c/hall.svg)
 
 Now we can manipulate the tile by adding params.  Choices are:
  - `s` for Size -- can be anything from 1 to 1000 (default size is 200)
@@ -64,7 +64,7 @@ Now we can manipulate the tile by adding params.  Choices are:
 
 `http://tiles.toothandclaw.co/t/c/hall.svg?s=100&c=27b`
 
-!(http://tiles.toothandclaw.co/t/c/hall.svg?s=100&c=27b)
+![](http://tiles.toothandclaw.co/t/c/hall.svg?s=100&c=27b)
 
 
 
