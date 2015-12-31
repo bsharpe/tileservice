@@ -65,3 +65,9 @@ Now we can manipulate the tile by adding params.  Choices are:
 `http://tiles.toothandclaw.co/t/c/hall.svg?s=100&c=27b`
 
 !(http://tiles.toothandclaw.co/t/c/hall.svg?s=100&c=27b)
+
+
+
+
+All images Copyright 2008-2016 Ben Sharpe. All rights reserved.
+
