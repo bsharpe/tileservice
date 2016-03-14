@@ -2,40 +2,40 @@ require 'tiles'
 
 class TileService
   include Singleton
-   
+
   DEFAULT_SCALE = 100/85.0
   DEFAULT_COLOR = '#DDDCBF'
-  
+
   def create(base, color, size: 100, **options)
-    
+
     color = DEAFULT_COLOR if color.blank? || color.size == 1
     color = 'transparent' if color == '#transparent'
     badge_offset = 23
     badge_start_x = 15
     badge_start_y = 15
-    options[:rotation] = (options[:rotation].to_i * 90) 
+    options[:rotation] = (options[:rotation].to_i * 90)
     options[:lean] ||= false
     vflip = options[:vflip] ? -1 : 1
     hflip = options[:hflip] ? -1 : 1
     hoffset = hflip == -1 ? size : 0
     voffset = vflip == -1 ? size : 0
-    
-    
+
+
     tile_data = $tiles[base.to_sym]
-    
+
     #puts "#{base} R:#{options[:rotation]} V:#{vflip} H:#{hflip} C:#{color} Z:#{size} #{tile_data ? '...' : '!!!'}"
     Rasem::SVGImage.new(width: size, height: size, lean: options[:lean]) do
       defs do
         mask(id: 'Mask') do
           rectangle( -1, -1, 102, 102,fill: 'white')
         end
-        
+
         if tile_data
           group(id: base) do
             instance_eval tile_data
           end
         end
-        
+
         if options[:special]
           special = Tile.where(name: 'special').first
           if special
@@ -44,25 +44,25 @@ class TileService
             end
           end
         end
-        
+
       end
       group do
-        group id: 'int', mask: 'url(#Mask)' do 
+        group id: 'int', mask: 'url(#Mask)' do
           rectangle( -1, -1, 102, 102,  fill: color)
           if options[:special]
             special_color = "##{options[:special]}"
-            use('special', fill: special_color, opacity: 0.3).scale(DEFAULT_SCALE) 
+            use('special', fill: special_color, opacity: 0.3).scale(DEFAULT_SCALE)
           end
-          
+
           if tile_data
-            use(base).scale(DEFAULT_SCALE) 
+            use(base).scale(DEFAULT_SCALE)
           elsif base.downcase != 'blank'
-            text(50, 33, fill: "black", 
-              'text-anchor' => 'middle', 
+            text(50, 33, fill: "black",
+              'text-anchor' => 'middle',
               'alignment-baseline' => 'central',
               'font-family' => 'Century Gothic, Verdana, Helvetica, Arial, sans-serif',
-              'letter-spacing' => -1.5) { 
-                lines(base.gsub('_',"\n\r"), 16)
+              'letter-spacing' => -1.5) {
+                lines(base, line_height: 16, line_break: '_')
              }
           end
 
