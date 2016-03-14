@@ -61,7 +61,7 @@ $tiles = {
       rect 28,38,29,25, rx:8, ry:8
     end
   },
-  house: %Q{
+  house1: %Q{
     rect 17,17,51,51, rx:5, ry:5, opacity: 0.1
     group(opacity: 0.35) do
       rect 25,35,35,20, rx:6, ry:6
