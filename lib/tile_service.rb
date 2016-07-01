@@ -9,7 +9,6 @@ class TileService
   def create(base, color, size: 100, **options)
 
     color = DEAFULT_COLOR if color.blank? || color.size == 1
-    color = 'transparent' if color == '#transparent'
     badge_offset = 23
     badge_start_x = 15
     badge_start_y = 15
@@ -20,6 +19,16 @@ class TileService
     hoffset = hflip == -1 ? size : 0
     voffset = vflip == -1 ? size : 0
 
+    owner_percent = options[:owner_percent].to_i 
+    if owner_percent > 0
+      owner_color = "##{options[:owner_color]}"
+      if owner_percent >= 100
+        color = owner_color
+        owner_percent = 0
+      end
+      owner_percent /= 100.0
+    end
+    color = color[1..99] if color[1] == '#'
 
     tile_data = $tiles[base.to_sym]
 
@@ -49,6 +58,14 @@ class TileService
       group do
         group id: 'int', mask: 'url(#Mask)' do
           rectangle( -1, -1, 102, 102,  fill: color)
+          
+          offset = (owner_percent * 1.4 * 50)
+          radius = (owner_percent * 1.4 * 100)
+           if owner_percent > 0 && owner_percent < 100
+            rectangle(50 - offset,50 - offset,radius,radius, rx:radius/2, ry:radius/2, 
+              fill: owner_color, opacity: 1.0, stroke_width: 0) 
+          end
+
           if options[:special]
             special_color = "##{options[:special]}"
             use('special', fill: special_color, opacity: 0.3).scale(DEFAULT_SCALE)
@@ -65,6 +82,7 @@ class TileService
                 lines(base, line_height: 16, line_break: '_')
              }
           end
+          
 
           rectangle( 0, 0, 100, 100, rx: 5, ry: 5, fill: 'transparent', stroke: 'black', stroke_width: 6, opacity: 0.2)
         end

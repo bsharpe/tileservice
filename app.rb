@@ -51,7 +51,9 @@ def generate_tile(params)
     size: (params[:s] || DEFAULT_SIZE).to_i, 
     rotation: params[:r] || 0,
     hflip: params[:flip],
-    vflip: params[:flop]
+    vflip: params[:flop],
+    owner_percent: params[:p],
+    owner_color: params[:o]
     )
 end
 
