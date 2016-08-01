@@ -18,6 +18,7 @@ class TileService
     hflip = options[:hflip] ? -1 : 1
     hoffset = hflip == -1 ? size : 0
     voffset = vflip == -1 ? size : 0
+    highlight = options[:highlight].present?
 
     owner_percent = options[:owner_percent].to_i 
     if owner_percent > 0
@@ -82,9 +83,12 @@ class TileService
                 lines(base, line_height: 16, line_break: '_')
              }
           end
-          
 
-          rectangle( 0, 0, 100, 100, rx: 5, ry: 5, fill: 'transparent', stroke: 'black', stroke_width: 6, opacity: 0.2)
+          if highlight
+            rectangle( 1, 1, 98, 98, rx: 8, ry: 8, fill: 'transparent', stroke: 'yellow', stroke_width: 10, opacity: 1)
+          else
+            rectangle( 0, 0, 100, 100, rx: 5, ry: 5, fill: 'transparent', stroke: 'black', stroke_width: 6, opacity: 0.2)
+          end
         end
       end.rotate(options[:rotation], size/2.0, size/2.0).translate(hoffset,voffset).scale(hflip * size/100.0, vflip * size/100.0)
     end
