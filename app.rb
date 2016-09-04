@@ -53,7 +53,8 @@ def generate_tile(params)
     hflip: params[:flip],
     vflip: params[:flop],
     owner_percent: params[:p],
-    owner_color: params[:o]
+    owner_color: params[:o],
+    highlight: params[:h]
     )
 end
 
