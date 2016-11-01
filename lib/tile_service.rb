@@ -66,7 +66,7 @@ class TileService
             rectangle(50 - offset,50 - offset,radius,radius, rx:radius/2, ry:radius/2, 
               fill: owner_color, stroke: owner_color, opacity: 1.0, stroke_width: 0) 
             rectangle(50 - offset,50 - offset,radius,radius, rx:radius/2, ry:radius/2,
-              fill: 'transparent', stroke: 'black', stroke_width: 3, opacity: 0.33)
+              fill: :transparent, stroke: :black, stroke_width: 3, opacity: 0.33)
           end
 
           if options[:special]
@@ -87,9 +87,9 @@ class TileService
           end
 
           if highlight
-            rectangle( 1, 1, 98, 98, rx: 8, ry: 8, fill: 'transparent', stroke: 'yellow', stroke_width: 10, opacity: 1)
+            rectangle( 1, 1, 98, 98, rx: 8, ry: 8, fill: :transparent, stroke: :yellow, stroke_width: 10, opacity: 1)
           else
-            rectangle( 0, 0, 100, 100, rx: 5, ry: 5, fill: 'transparent', stroke: 'black', stroke_width: 6, opacity: 0.2)
+            rectangle( 0, 0, 100, 100, rx: 5, ry: 5, fill: :transparent, stroke: :black, stroke_width: 6, opacity: 0.2)
           end
         end
       end.rotate(options[:rotation], size/2.0, size/2.0).translate(hoffset,voffset).scale(hflip * size/100.0, vflip * size/100.0)
