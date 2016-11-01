@@ -62,9 +62,11 @@ class TileService
           
           offset = (owner_percent * 1.4 * 50)
           radius = (owner_percent * 1.4 * 100)
-           if owner_percent > 0 && owner_percent < 100
+          if owner_percent > 0 && owner_percent < 100
             rectangle(50 - offset,50 - offset,radius,radius, rx:radius/2, ry:radius/2, 
-              fill: owner_color, opacity: 1.0, stroke_width: 0) 
+              fill: owner_color, stroke: owner_color, opacity: 1.0, stroke_width: 0) 
+            rectangle(50 - offset,50 - offset,radius,radius, rx:radius/2, ry:radius/2,
+              fill: 'transparent', stroke: 'black', stroke_width: 3, opacity: 0.33)
           end
 
           if options[:special]
