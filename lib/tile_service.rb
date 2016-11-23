@@ -86,10 +86,10 @@ class TileService
              }
           end
 
+          rectangle( 0, 0, 100, 100, rx: 5, ry: 5, fill: :transparent, stroke: :black, stroke_width: 6, opacity: 0.2)
           if highlight
-            rectangle( 1, 1, 98, 98, rx: 8, ry: 8, fill: :transparent, stroke: :yellow, stroke_width: 10, opacity: 1)
+            rectangle( 4, 4, 92, 92, rx: 3, ry: 3, fill: :transparent, stroke: :yellow, stroke_width: 4, opacity: 0.5)
           else
-            rectangle( 0, 0, 100, 100, rx: 5, ry: 5, fill: :transparent, stroke: :black, stroke_width: 6, opacity: 0.2)
           end
         end
       end.rotate(options[:rotation], size/2.0, size/2.0).translate(hoffset,voffset).scale(hflip * size/100.0, vflip * size/100.0)

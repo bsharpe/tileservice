@@ -7,6 +7,7 @@ require 'sinatra/reloader'
 require 'sinatra/config_file'
 require 'tile_service'
 require 'badge_service'
+require 'dot_service'
 
 set :public_folder, File.dirname(__FILE__) + '/public'
 set :root, File.dirname(__FILE__)
@@ -33,6 +34,15 @@ end
 def color(color = nil)
   color = DEFAULT_COLOR if color.nil? || color.size == 0
   "##{color}"
+end
+
+def generate_dots(params)
+  enemies,team,faction,friends = params[:count].split('_')
+  DotService.instance.create(enemies.to_i, 
+    size: (params[:s] || DEFAULT_SIZE).to_i, 
+    team: team.to_i,
+    faction: faction.to_i,
+    friends: friends.to_i)
 end
 
 def generate_tile(params)
@@ -88,6 +98,20 @@ get '/t/c/:base.svg' do
   etag Digest::MD5.hexdigest(tile)
   tile
 end
+
+####
+# DOTS
+#
+get '/d/:count.svg' do
+  generate_dots(params).to_s
+end
+get '/d/c/:count.svg' do
+  cache_control :public, max_age: MAX_AGE
+  tile = generate_dots(params).to_s
+  etag Digest::MD5.hexdigest(tile)
+  tile
+end
+
 
 ####
 # BADGES
