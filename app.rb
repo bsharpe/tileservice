@@ -71,7 +71,9 @@ end
 def generate_badge(params)
   BadgeService.instance.create(params[:base], 
     size: (params[:s] || DEFAULT_BADGE_SIZE).to_i,
-    friend: params[:f])
+    friend: params[:f],
+    tile: params[:t],
+    badge_size: params[:bs])
 end
 
 ####
