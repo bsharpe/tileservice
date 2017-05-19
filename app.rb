@@ -135,3 +135,15 @@ get '/' do
   content_type :text
   'TileServer 0.2'
 end
+
+
+#### 
+# HONEYPOT
+#
+get '/phpmyadmin' do
+  sleep(60)
+end
+
+post '/login.action' do
+  sleep(60)
+end
