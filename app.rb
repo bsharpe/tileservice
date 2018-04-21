@@ -16,7 +16,7 @@ configure :production do
   set :logging, Logger::ERROR
 end
 
-configure :development do 
+configure :development do
   set :logging, Logger::DEBUG
 end
 
@@ -38,8 +38,8 @@ end
 
 def generate_dots(params)
   enemies,team,faction,friends = params[:count].split('_')
-  DotService.instance.create(enemies.to_i, 
-    size: (params[:s] || DEFAULT_SIZE).to_i, 
+  DotService.instance.create(enemies.to_i,
+    size: (params[:s] || DEFAULT_SIZE).to_i,
     team: team.to_i,
     faction: faction.to_i,
     friends: friends.to_i)
@@ -57,8 +57,8 @@ def generate_tile(params)
     end
   end
   TileService.instance.create(params[:base],
-    color(params[:c]), 
-    size: (params[:s] || DEFAULT_SIZE).to_i, 
+    color(params[:c]),
+    size: (params[:s] || DEFAULT_SIZE).to_i,
     rotation: params[:r] || 0,
     hflip: params[:flip],
     vflip: params[:flop],
@@ -69,7 +69,7 @@ def generate_tile(params)
 end
 
 def generate_badge(params)
-  BadgeService.instance.create(params[:base], 
+  BadgeService.instance.create(params[:base],
     size: (params[:s] || DEFAULT_BADGE_SIZE).to_i,
     friend: params[:f],
     tile: params[:t],
@@ -114,7 +114,6 @@ get '/d/c/:count.svg' do
   tile
 end
 
-
 ####
 # BADGES
 #
@@ -137,7 +136,7 @@ get '/' do
 end
 
 
-#### 
+####
 # HONEYPOT
 #
 get '/phpmyadmin' do
