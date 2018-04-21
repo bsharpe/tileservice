@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/bsharpe/rasem.git
+  remote: https://github.com/bsharpe/rasem.git
   revision: 03a9d264ff79cba397bea5ed9a6e1f31012f7516
   specs:
     rasem (0.7.0)
