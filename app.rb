@@ -47,13 +47,30 @@ end
 
 def generate_tile(params)
   if params[:r]
-    case params[:r].to_i
-    when 1..3
-      params[:rotation] = params[:r].to_i * 90
-    when 4
-      params[:flip] = true
-    when 5
-      params[:flop] = true
+    if params[:r].match(/\d+/)
+      r = params[:r].to_i
+      if r < 6
+        case r
+        when 1..3
+          params[:r] = r * 90
+        when 4
+          params[:r] = 0
+          params[:flip] = true
+        when 5
+          params[:r] = 0
+          params[:flop] = true
+        end
+      else
+        params[:r] = ((r / 22.5).round * 22.5).round
+      end
+    else
+      case params[:r]
+      when 'flip'
+        params[:flip] = true
+      when 'flop'
+        params[:flop] = true
+      end
+      params[:r] = 0
     end
   end
   TileService.instance.create(params[:base],
