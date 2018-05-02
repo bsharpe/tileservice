@@ -3,7 +3,7 @@ require 'tiles'
 class TileService
   include Singleton
 
-  DEFAULT_SCALE = 100/85.0
+  DEFAULT_SCALE = 100.0/85
   DEFAULT_COLOR = '#DDDCBF'
 
   def create(base, color, size: 100, **options)
