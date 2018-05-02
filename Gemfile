@@ -10,6 +10,7 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'puma'
 gem 'foreman'
+gem 'awesome_print'
 
 gem 'rasem', github:'bsharpe/rasem'
 

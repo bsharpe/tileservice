@@ -47,4 +47,15 @@ $badges = {
       end
     end
   },
+  civilian: %Q{
+    defs do
+      group(id: 'badge', fill: "#fefefe", scale: "1.7", translate: [0.65,0.65]) do
+        raw %Q[
+            <path d="M 4.19 2.1 h2 v2 h2 v2 h-2 v2 h-2 v-2 h-2 v-2 h2 z" />
+            <circle cx="5.2" cy="5.1" r="1.2" fill="#888"/>
+        ]
+      end
+    end
+  },
+
 }
