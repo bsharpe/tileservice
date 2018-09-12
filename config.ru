@@ -3,7 +3,6 @@ require 'bundler'
 
 Bundler.require
 
- 
 # map just one file
 map "/favicon.ico" do
   nil
