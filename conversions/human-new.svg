@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="20" height="20" viewBox="0, 0, 100, 100">
+  <g id="Layer_1">
+    <path d="M100,50 C100,77.614 77.614,100 50,100 C22.386,100 0,77.614 0,50 C0,22.386 22.386,0 50,0 C77.614,0 100,22.386 100,50 z" fill="#2B73B1"/>
+    <path d="M49.332,18.896 C50.976,18.052 52.644,19.441 54.169,20.191 C59.326,23.097 64.519,25.621 69.688,28.477 C71.332,29.402 73.138,30.971 73.376,33.508 C73.619,46.64 70.569,60.058 64.126,70.202 C60.369,75.396 56.126,80.921 50.663,82.552 C46.057,81.352 42.276,77.077 39.019,72.821 C31.438,62.79 28.088,48.371 27.926,34.465 C27.732,31.165 30.176,29.171 32.213,28.14 C37.944,25.152 43.551,21.733 49.332,18.896 z" fill="#FEFEFF"/>
+    <path d="M49.332,18.104 C50.976,17.26 50.638,26.954 50.638,25.255 C50.637,79.255 50.637,81.881 50.663,81.952 C52.286,86.427 42.276,77.045 39.019,72.789 C31.438,62.757 28.088,47.579 27.926,33.673 C27.732,30.373 30.176,28.379 32.213,27.348 C37.944,24.36 43.551,20.942 49.332,18.104 z" fill="#2F74AF" fill-opacity="0.498"/>
+    <path d="M95.833,50 C95.833,75.313 75.313,95.833 50,95.833 C24.687,95.833 4.167,75.313 4.167,50 C4.167,24.687 24.687,4.167 50,4.167 C75.313,4.167 95.833,24.687 95.833,50 z" fill-opacity="0" stroke="#383333" stroke-width="8.333" opacity="0.5"/>
+    <path d="M0,0 L0,0" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    <g>
+      <path d="M0,0 L0,0" fill="#4E8EC4"/>
+      <path d="M0,0 L0,0" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    </g>
+    <path d="M0,0 L0,0" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    <g>
+      <path d="M0,0 L0,0" fill="#345471"/>
+      <path d="M0,0 L0,0" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    </g>
+    <path d="M0,0 L0,0" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    <path d="M0,0 L0,0" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    <path d="M0,0 L0,0" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    <path d="M0,0 L0,0" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    <path d="M0,0 L0,0" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    <path d="M0,0 L0,0" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+  </g>
+</svg>
