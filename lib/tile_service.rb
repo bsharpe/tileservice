@@ -36,7 +36,7 @@ class TileService
     Rasem::SVGImage.new(width: size, height: size, lean: options[:lean]) do
       defs do
         mask(id: 'Mask') do
-          rectangle( -1, -1, 102, 102,fill: 'white')
+          rectangle( -1, -1, 102, 102, rx: 7, ry: 7, fill: 'white')
         end
 
         if tile_data
