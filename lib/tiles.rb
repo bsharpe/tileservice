@@ -1,4 +1,77 @@
 $tiles = {
+  blank: %Q{
+    raw %Q[
+      <path d="M8.5,14.167 L0,28.333 L17,28.333 z" fill="#444444" fill-opacity="0.1"/>
+      <path d="M8.5,14.167 L17,-0 L0,-0 z" fill="#000000" fill-opacity="0.1"/>
+      <path d="M25.5,14.167 L34,-0 L17,-0 z" fill="#AAAAAA" fill-opacity="0.1"/>
+      <path d="M42.5,14.167 L34,28.333 L51,28.333 z" fill="#DDDDDD" fill-opacity="0.1"/>
+      <path d="M42.5,14.167 L51,-0 L34,-0 z" fill="#999999" fill-opacity="0.1"/>
+      <path d="M59.5,14.167 L51,28.333 L68,28.333 z" fill="#000000" fill-opacity="0.1"/>
+      <path d="M59.5,14.167 L68,-0 L51,-0 z" fill="#DDDDDD" fill-opacity="0.1"/>
+      <path d="M76.5,14.167 L68,28.333 L85,28.333 z" fill="#444444" fill-opacity="0.1"/>
+      <path d="M76.5,14.167 L85,-0 L68,-0 z" fill="#FFFFFF" fill-opacity="0.1"/>
+      <path d="M93.5,14.167 L85,28.333 L102,28.333 z" fill="#DDDDDD" fill-opacity="0.1"/>
+      <path d="M93.5,14.167 L102,-0 L85,-0 z" fill="#444444" fill-opacity="0.1"/>
+      <path d="M8.5,42.5 L0,56.667 L17,56.667 z" fill="#DDDDDD" fill-opacity="0.1"/>
+      <path d="M8.5,42.5 L17,28.333 L0,28.333 z" fill="#000000" fill-opacity="0.1"/>
+      <path d="M25.5,42.5 L17,56.667 L34,56.667 z" fill="#666666" fill-opacity="0.1"/>
+      <path d="M25.5,42.5 L34,28.333 L17,28.333 z" fill="#AAAAAA" fill-opacity="0.1"/>
+      <path d="M42.5,42.5 L34,56.667 L51,56.667 z" fill="#DDDDDD" fill-opacity="0.1"/>
+      <path d="M42.5,42.5 L51,28.333 L34,28.333 z" fill="#999999" fill-opacity="0.1"/>
+      <path d="M59.5,42.5 L51,56.667 L68,56.667 z" fill="#999999" fill-opacity="0.1"/>
+      <path d="M59.5,42.5 L68,28.333 L51,28.333 z" fill="#FFFFFF" fill-opacity="0.1"/>
+      <path d="M76.5,42.5 L68,56.667 L85,56.667 z" fill="#000000" fill-opacity="0.1"/>
+      <path d="M76.5,42.5 L85,28.333 L68,28.333 z" fill="#DDDDDD" fill-opacity="0.1"/>
+      <path d="M93.5,42.5 L85,56.667 L102,56.667 z" fill="#AAAAAA" fill-opacity="0.1"/>
+      <path d="M93.5,42.5 L102,28.333 L85,28.333 z" fill="#444444" fill-opacity="0.1"/>
+      <path d="M8.5,70.833 L0,85 L17,85 z" fill="#222222" fill-opacity="0.1"/>
+      <path d="M25.5,70.833 L17,85 L34,85 z" fill="#000000" fill-opacity="0.1"/>
+      <path d="M25.5,70.833 L34,56.667 L17,56.667 z" fill="#DDDDDD" fill-opacity="0.1"/>
+      <path d="M42.5,70.833 L51,56.667 L34,56.667 z" fill="#000000" fill-opacity="0.1"/>
+      <path d="M59.5,70.833 L51,85 L68,85 z" fill="#000000" fill-opacity="0.1"/>
+      <path d="M59.5,70.833 L68,56.667 L51,56.667 z" fill="#444444" fill-opacity="0.1"/>
+      <path d="M76.5,70.833 L68,85 L85,85 z" fill="#AAAAAA" fill-opacity="0.1"/>
+      <path d="M76.5,70.833 L85,56.667 L68,56.667 z" fill="#666666" fill-opacity="0.1"/>
+      <path d="M93.5,70.833 L85,85 L102,85 z" fill="#999999" fill-opacity="0.1"/>
+      <path d="M17,-0 L8.5,14.167 L25.5,14.167 z" fill="#999999" fill-opacity="0.1"/>
+      <path d="M34,-0 L25.5,14.167 L42.5,14.167 z" fill="#444444" fill-opacity="0.1"/>
+      <path d="M51,-0 L42.5,14.167 L59.5,14.167 z" fill="#FFFFFF" fill-opacity="0.1"/>
+      <path d="M85,-0 L76.5,14.167 L93.5,14.167 z" fill="#000000" fill-opacity="0.1"/>
+      <path d="M0,28.333 L-8.5,42.5 L8.5,42.5 z" fill="#222222" fill-opacity="0.1"/>
+      <path d="M0,28.333 L8.5,14.167 L-8.5,14.167 z" fill="#FFFFFF" fill-opacity="0.1"/>
+      <path d="M17,28.333 L8.5,42.5 L25.5,42.5 z" fill="#FFFFFF" fill-opacity="0.1"/>
+      <path d="M17,28.333 L25.5,14.167 L8.5,14.167 z" fill="#666666" fill-opacity="0.1"/>
+      <path d="M34,28.333 L25.5,42.5 L42.5,42.5 z" fill="#222222" fill-opacity="0.1"/>
+      <path d="M34,28.333 L42.5,14.167 L25.5,14.167 z" fill="#FFFFFF" fill-opacity="0.1"/>
+      <path d="M51,28.333 L42.5,42.5 L59.5,42.5 z" fill="#444444" fill-opacity="0.1"/>
+      <path d="M51,28.333 L59.5,14.167 L42.5,14.167 z" fill="#222222" fill-opacity="0.1"/>
+      <path d="M68,28.333 L59.5,42.5 L76.5,42.5 z" fill="#AAAAAA" fill-opacity="0.1"/>
+      <path d="M68,28.333 L76.5,14.167 L59.5,14.167 z" fill="#666666" fill-opacity="0.1"/>
+      <path d="M85,28.333 L76.5,42.5 L93.5,42.5 z" fill="#FFFFFF" fill-opacity="0.1"/>
+      <path d="M85,28.333 L93.5,14.167 L76.5,14.167 z" fill="#999999" fill-opacity="0.1"/>
+      <path d="M0,56.667 L-8.5,70.833 L8.5,70.833 z" fill="#000000" fill-opacity="0.1"/>
+      <path d="M0,56.667 L8.5,42.5 L-8.5,42.5 z" fill="#666666" fill-opacity="0.1"/>
+      <path d="M17,56.667 L8.5,70.833 L25.5,70.833 z" fill="#AAAAAA" fill-opacity="0.1"/>
+      <path d="M17,56.667 L25.5,42.5 L8.5,42.5 z" fill="#444444" fill-opacity="0.1"/>
+      <path d="M34,56.667 L25.5,70.833 L42.5,70.833 z" fill="#444444" fill-opacity="0.1"/>
+      <path d="M34,56.667 L42.5,42.5 L25.5,42.5 z" fill="#999999" fill-opacity="0.1"/>
+      <path d="M51,56.667 L59.5,42.5 L42.5,42.5 z" fill="#666666" fill-opacity="0.1"/>
+      <path d="M68,56.667 L59.5,70.833 L76.5,70.833 z" fill="#222222" fill-opacity="0.1"/>
+      <path d="M85,56.667 L76.5,70.833 L93.5,70.833 z" fill="#FFFFFF" fill-opacity="0.1"/>
+      <path d="M85,56.667 L93.5,42.5 L76.5,42.5 z" fill="#222222" fill-opacity="0.1"/>
+      <path d="M0,85 L8.5,70.833 L-8.5,70.833 z" fill="#DDDDDD" fill-opacity="0.1"/>
+      <path d="M17,85 L25.5,70.833 L8.5,70.833 z" fill="#444444" fill-opacity="0.1"/>
+      <path d="M34,85 L42.5,70.833 L25.5,70.833 z" fill="#FFFFFF" fill-opacity="0.1"/>
+      <path d="M51,85 L59.5,70.833 L42.5,70.833 z" fill="#AAAAAA" fill-opacity="0.1"/>
+      <path d="M68,85 L76.5,70.833 L59.5,70.833 z" fill="#FFFFFF" fill-opacity="0.1"/>
+      <path d="M85,85 L93.5,70.833 L76.5,70.833 z" fill="#222222" fill-opacity="0.1"/>
+      <path d="M102,28.333 L93.5,42.5 L110.5,42.5 z" fill="#222222" fill-opacity="0.1"/>
+      <path d="M102,28.333 L110.5,14.167 L93.5,14.167 z" fill="#FFFFFF" fill-opacity="0.1"/>
+      <path d="M102,56.667 L93.5,70.833 L110.5,70.833 z" fill="#000000" fill-opacity="0.1"/>
+      <path d="M102,56.667 L110.5,42.5 L93.5,42.5 z" fill="#666666" fill-opacity="0.1"/>
+      <path d="M102,85 L110.5,70.833 L93.5,70.833 z" fill="#DDDDDD" fill-opacity="0.1"/>
+    ]
+  },
   el: %Q{
     group(opacity: 0.35) do
       rect 17,17,25,51, rx:5, ry:5
