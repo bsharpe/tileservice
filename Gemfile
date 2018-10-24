@@ -16,3 +16,7 @@ gem 'awesome_print'
 gem 'rasem', github:'bsharpe/rasem'
 
 gem 'thor'
+
+group :development do
+  gem 'bundleup', require: false
+end
