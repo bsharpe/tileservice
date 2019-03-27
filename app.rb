@@ -8,6 +8,7 @@ require 'sinatra/config_file'
 require 'tile_service'
 require 'badge_service'
 require 'dot_service'
+require 'iodine'
 
 set :public_folder, File.dirname(__FILE__) + '/public'
 set :root, File.dirname(__FILE__)
@@ -18,6 +19,12 @@ end
 
 configure :development do
   set :logging, Logger::DEBUG
+end
+
+if (defined?(Iodine))
+  Iodine.threads = ENV.fetch("RAILS_MAX_THREADS", 5).to_i if Iodine.threads.zero?
+  Iodine.workers = ENV.fetch("WEB_CONCURRENCY", 2).to_i if Iodine.workers.zero?
+  Iodine::DEFAULT_SETTINGS[:port] = ENV.fetch("PORT", 3000).to_i
 end
 
 DEFAULT_COLOR = 'DDDCBF'
@@ -151,7 +158,6 @@ get '/' do
   content_type :text
   'TileServer 0.2'
 end
-
 
 ####
 # HONEYPOT

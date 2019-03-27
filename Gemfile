@@ -9,7 +9,7 @@ gem 'rack-cache'
 gem 'sinatra'
 gem 'sinatra-contrib'
 # gem 'sinatra-logger', '>= 0.2.6'
-gem 'puma'
+gem 'iodine'
 gem 'foreman'
 gem 'awesome_print'
 
