@@ -2,16 +2,16 @@
 
 # URL PARAMS
 
-*BASE URL:* http://tiles.toothandclaw.co
+*BASE URL:* https://tnc-tileserver.herokuapp.com
 
 next we have either `t` for Tiles, or `b` for Badges
 
-`http://tiles.toothandclaw.co/t`
+`https://tnc-tileserver.herokuapp.com/t`
 
 then, `c` or no `c` for _cached_ (this may be dropped in future as they all may be cached)
 non-cached is mostly for testing...
 
-`http://tiles.toothandclaw.co/t/c/`
+`https://tnc-tileserver.herokuapp.com/t/c/`
 
 Next is the name of the tile -- currently accepted names are:
 
@@ -49,9 +49,9 @@ Next is the name of the tile -- currently accepted names are:
 
 Then, add `.svg` to the end.
 
-`http://tiles.toothandclaw.co/t/c/hall.svg`
+`https://tnc-tileserver.herokuapp.com/t/c/hall.svg`
 
-![](http://tiles.toothandclaw.co/t/c/hall.svg)
+![](https://tnc-tileserver.herokuapp.com/t/c/hall.svg)
 
 Now we can manipulate the tile by adding params.  Choices are:
  - `s` for Size -- can be anything from 1 to 1000 (default size is 200)
@@ -63,12 +63,12 @@ Now we can manipulate the tile by adding params.  Choices are:
   - 4 flips the tile horizontally
   - 5 flips the tile vertically
 
-`http://tiles.toothandclaw.co/t/c/hall.svg?s=100&c=27b&r=1`
+`https://tnc-tileserver.herokuapp.com/t/c/hall.svg?s=100&c=27b&r=1`
 
-![](http://tiles.toothandclaw.co/t/c/hall.svg?s=100&c=27b&r=1)
-
-
+![](https://tnc-tileserver.herokuapp.com/t/c/hall.svg?s=100&c=27b&r=1)
 
 
-All images Copyright 2008-2016 Ben Sharpe. All rights reserved.
+
+
+All images Copyright 2008-2019 Ben Sharpe. All rights reserved.
 
