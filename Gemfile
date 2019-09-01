@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.2'
 
 gem 'rake'
-gem 'activesupport', '~>5'
+gem 'activesupport'
 gem 'rack-cache'
 gem 'sinatra'
 gem 'sinatra-contrib'
