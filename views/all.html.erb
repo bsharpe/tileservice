@@ -11,26 +11,18 @@
       .flex-child {
       flex: 1;
       }
-      .flex-child:first-child {
-
-      }
-      .grid-container {
-      display: grid;
-      grid-template-columns: 2fr 2fr;
-      grid-gap: 20px;
-      }
-      .float-container {
-      border: 3px solid #fff;
-      padding: 20px;
-      }
-      .float-child {
-      width: 10%;
-      float: left;
-      padding: 4px;
-      }
       .wrapper {
       margin: auto;
       max-width: 80%;
+      }
+      body {
+        margin: 1rem;
+        padding: 1rem;
+        font-family: Inter var,ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #fefefe;
+        background-color: #1e293b;
       }
     </style>
   </head>
@@ -40,7 +32,7 @@
       <% @tiles.each do |item| %>
         <div class="flex-child">
           <p><%= item %></p>
-          <a href="/t/<%= item %>.svg?s=400"><img src="/t/<%= item %>.svg" width=100 height=100></a>
+          <a href="/t/<%= item %>.svg?s=400"><img src="/t/c/<%= item %>.svg" width=100 height=100></a>
         </div>
       <% end %>
     </div>
@@ -50,7 +42,7 @@
       <% @badges.each do |item| %>
         <div class="flex-child">
           <p><%= item %></p>
-          <a href="/b/<%= item %>.svg?s=400"><img src="/b/<%= item %>.svg" width=100 height=100></a>
+          <a href="/b/<%= item %>.svg?s=400"><img src="/b/c/<%= item %>.svg" width=100 height=100></a>
         </div>
       <% end %>
     </div>
