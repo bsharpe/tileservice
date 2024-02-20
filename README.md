@@ -70,5 +70,5 @@ Now we can manipulate the tile by adding params.  Choices are:
 
 
 
-All images Copyright 2008-2019 Ben Sharpe. All rights reserved.
+All images Copyright 2008-2024 Ben Sharpe. All rights reserved.
 
