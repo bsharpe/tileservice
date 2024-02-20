@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+  <head>
+    <title>Tileserver</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+      .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      }
+      .flex-child {
+      flex: 1;
+      }
+      .flex-child:first-child {
+
+      }
+      .grid-container {
+      display: grid;
+      grid-template-columns: 2fr 2fr;
+      grid-gap: 20px;
+      }
+      .float-container {
+      border: 3px solid #fff;
+      padding: 20px;
+      }
+      .float-child {
+      width: 10%;
+      float: left;
+      padding: 4px;
+      }
+      .wrapper {
+      margin: auto;
+      max-width: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tiles</h1>
+    <div style="margin-bottom: 2rem;" class="flex-container wrapper">
+      <% @tiles.each do |item| %>
+        <div class="flex-child">
+          <p><%= item %></p>
+          <img src="/t/<%= item %>.svg" width=100 height=100>
+        </div>
+      <% end %>
+    </div>
+    <br/>
+    <h1>Badges</h1>
+    <div style="margin-bottom: 2rem;" class="flex-container wrapper">
+      <% @badges.each do |item| %>
+        <div class="flex-child">
+          <p><%= item %></p>
+          <img src="/b/<%= item %>.svg" width=100 height=100>
+        </div>
+      <% end %>
+    </div>
+  </body>
+</html>

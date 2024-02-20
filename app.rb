@@ -5,12 +5,17 @@ require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/reloader'
 require 'sinatra/config_file'
+require 'sinatra/custom_logger'
+require 'logger'
 require 'tile_service'
 require 'badge_service'
 require 'dot_service'
 require 'puma'
+require "erb"
 
-set :public_folder, File.dirname(__FILE__) + '/public'
+set :logger, Logger.new($stdout)
+set :public_folder, "#{File.dirname(__FILE__)}/public"
+set :views, "#{File.dirname(__FILE__)}/views"
 set :root, File.dirname(__FILE__)
 
 configure :production do
@@ -95,15 +100,14 @@ def generate_badge(params)
 end
 
 ####
-# FAVICON
+# ALL
 #
-get '/favicon.ico' do
-  content_type 'image/svg+xml'
-  BadgeService.instance.create('traitor',size: 64,friend: true).to_s
-end
-get '/favicon.svg' do
-  content_type 'image/svg+xml'
-  BadgeService.instance.create('traitor',size: 64,friend: true).to_s
+
+get '/all' do
+  @tiles = $tiles.keys
+  @badges = $badges.keys
+  content_type :html
+  erb :"all.html"
 end
 
 ####

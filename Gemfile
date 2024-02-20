@@ -9,12 +9,16 @@ gem 'mutex_m'
 
 gem 'rake'
 gem 'activesupport'
+gem 'rackup'
 gem 'rack-cache'
+
 gem 'sinatra'
 gem 'sinatra-contrib'
-# gem 'sinatra-logger', '>= 0.2.6'
+gem 'erb'
+
 gem 'puma'
 gem 'foreman'
+
 gem 'awesome_print'
 
 gem 'rasem', github:'bsharpe/rasem'
