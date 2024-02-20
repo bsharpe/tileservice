@@ -23,7 +23,7 @@ configure :production do
 end
 
 configure :development do
-  set :logging, Logger::DEBUG
+  set :logging, Logger::ERROR
 end
 
 DEFAULT_COLOR = 'DDDCBF'
