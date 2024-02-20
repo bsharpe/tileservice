@@ -19,12 +19,12 @@ GEM
     foreman (0.87.2)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
-    iodine (0.7.44)
+    iodine (0.7.57)
     minitest (5.14.4)
     multi_json (1.15.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
-    rack (2.2.3)
+    rack (2.2.8)
     rack-cache (1.12.1)
       rack (>= 0.4)
     rack-protection (2.1.0)
@@ -65,7 +65,7 @@ DEPENDENCIES
   thor
 
 RUBY VERSION
-   ruby 3.0.1p64
+   ruby 3.3.0p0
 
 BUNDLED WITH
-   2.2.15
+   2.5.6
