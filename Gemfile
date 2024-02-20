@@ -3,13 +3,17 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.3.0'
 
+gem 'base64'
+gem 'bigdecimal'
+gem 'mutex_m'
+
 gem 'rake'
 gem 'activesupport'
 gem 'rack-cache'
 gem 'sinatra'
 gem 'sinatra-contrib'
 # gem 'sinatra-logger', '>= 0.2.6'
-gem 'iodine'
+gem 'puma'
 gem 'foreman'
 gem 'awesome_print'
 
