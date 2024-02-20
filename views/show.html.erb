@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+  <head>
+    <title>Tileserver</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+      .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      }
+      .flex-child {
+      flex: 1;
+      }
+      .wrapper {
+      margin: auto;
+      max-width: 80%;
+      }
+      body {
+        margin: 1rem;
+        padding: 1rem;
+        font-family: "Inter var","ui-sans-serif","system-ui","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        font-size: 16px;
+        line-height: 1.5;
+        color: #fefefe;
+        background-color: #1e293b;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><%= @item %> Variations</h1>
+    <h2>Rotation</h2>
+    <div style="margin-bottom: 2rem;" class="flex-container wrapper">
+      <% (0..3).each do |rotation| %>
+        <div class="flex-child">
+          <p class="text-xlg">r=<%= rotation %></p>
+          <img src="/t/c/<%= @item %>.svg?r=<%= rotation %>" width=100 height=100>
+        </div>
+      <% end %>
+    </div>
+    <h2>Flips</h2>
+    <div style="margin-bottom: 2rem;" class="flex-container wrapper">
+      <div class="flex-child">
+        <p class="text-xlg">flip=0</p>
+        <img src="/t/<%= @item %>.svg" width=100 height=100>
+      </div>
+      <div class="flex-child">
+        <p class="text-xlg">flop=1</p>
+        <img src="/t/<%= @item %>.svg?flop=1" width=100 height=100>
+      </div>
+      <div class="flex-child">
+        <p class="text-xlg">flip=0</p>
+        <img src="/t/<%= @item %>.svg" width=100 height=100>
+      </div>
+      <div class="flex-child">
+        <p class="text-xlg">flip=1</p>
+        <img src="/t/<%= @item %>.svg?flip=1" width=100 height=100>
+      </div>
+    </div>
+    <h2>Other</h2>
+    <div style="margin-bottom: 2rem;" class="flex-container wrapper">
+      <div class="flex-child">
+        <p class="text-xlg">h=true</p>
+        <img src="/t/<%= @item %>.svg?h=true" width=100 height=100>
+      </div>
+      <div class="flex-child">
+        <p class="text-xlg">x=true</p>
+        <img src="/t/<%= @item %>.svg?x=true" width=100 height=100>
+      </div>
+      <div class="flex-child">
+        <p class="text-xlg">o=f00</p>
+        <img src="/t/<%= @item %>.svg?o=f00&p=100" width=100 height=100>
+      </div>
+      <div class="flex-child">
+        <p class="text-xlg">p=50</p>
+        <img src="/t/<%= @item %>.svg?o=f00&p=50" width=100 height=100>
+      </div>
+    </div>
+  </body>
+</html>

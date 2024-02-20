@@ -13,7 +13,7 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
-    awesome_print (1.9.2)
+    amazing_print (1.5.0)
     base64 (0.2.0)
     bigdecimal (3.1.6)
     bundleup (2.4.1)
@@ -69,7 +69,7 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
-  awesome_print
+  amazing_print
   base64
   bigdecimal
   bundleup

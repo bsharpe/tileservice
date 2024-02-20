@@ -12,6 +12,7 @@ require 'badge_service'
 require 'dot_service'
 require 'puma'
 require "erb"
+require "amazing_print"
 
 set :logger, Logger.new($stdout)
 set :public_folder, "#{File.dirname(__FILE__)}/public"
@@ -87,7 +88,8 @@ def generate_tile(params)
     vflip: params[:flop],
     owner_percent: params[:p],
     owner_color: params[:o],
-    highlight: params[:h]
+    highlight: params[:h],
+    special: params[:x]
     )
 end
 
@@ -108,6 +110,12 @@ get '/all' do
   @badges = $badges.keys
   content_type :html
   erb :"all.html"
+end
+
+get "/tile/:name" do
+  content_type :html
+  @item = params[:name]
+  erb :"show.html"
 end
 
 ####

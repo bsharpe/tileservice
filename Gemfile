@@ -19,7 +19,7 @@ gem 'erb'
 gem 'puma'
 gem 'foreman'
 
-gem 'awesome_print'
+gem 'amazing_print'
 
 gem 'rasem', github:'bsharpe/rasem'
 

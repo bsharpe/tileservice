@@ -32,7 +32,8 @@ class TileService
 
     tile_data = $tiles[base.to_sym]
 
-    #puts "#{base} R:#{options[:rotation]} V:#{vflip} H:#{hflip} C:#{color} Z:#{size} #{tile_data ? '...' : '!!!'}"
+    # ap options
+    # puts "#{base} R:#{options[:rotation]} V:#{vflip} H:#{hflip} C:#{color} Z:#{size} #{tile_data ? '...' : '!!!'}"
     Rasem::SVGImage.new(width: size, height: size, lean: options[:lean]) do
       defs do
         mask(id: 'Mask') do
@@ -46,10 +47,10 @@ class TileService
         end
 
         if options[:special]
-          special = Tile.where(name: 'special').first
+          special = $tiles[:special]
           if special
-            group(id: special.name) do
-              instance_eval special.svg_data
+            group(id: "special") do
+              instance_eval special
             end
           end
         end
